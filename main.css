@@ -1,0 +1,66 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar {
+    background-color: rgb(0, 147, 221);
+}
+
+.navbar-brand img {
+    height: 64px;
+}
+
+#navbar-principal .nav .nav-link.active {
+    background-color: #fff;
+    color: rgb(0, 147, 221);
+}
+
+#navbar-principal .nav .nav-link,
+.navbar-brand,
+.navbar-brand:hover,
+.nav-cardapio .nav-link.active:hover {
+    color: #fff;
+}
+
+#navbar-principal .navbar-toggler {
+    background-color: rgb(185, 210, 223);
+}
+
+.section-title span {
+    color: rgb(0, 147, 221);
+}
+
+section:nth-child(even) {
+    background-color: rgb(185, 210, 223);
+}
+    
+
+
+.text-colored, a {
+    color: rgb(0, 147, 221);
+}
+
+.nav-cardapio .nav-link.active,
+#contato button {
+    background-color: rgb(0, 147, 221);
+    color: white;
+}
+
+.nav-cardapio .nav-link:hover {
+    color: rgb(0, 147, 221);
+}
+
+.social-links li {
+    list-style: none;
+    display: inline;
+}
+
+.social-links a {
+    text-decoration: none;
+}
+
+@media screen and (max-width: 767px) {
+    .carousel-item img {
+        height: 280px;
+    }
+}
