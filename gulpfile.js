@@ -50,6 +50,17 @@ let TEXTO_HTML_TONTO = `
 Robô seguidor de linha
 `
 
+// Seção 4 - Projetos
+const FOTO_ROBO_UV = 'img/sample_16x9.png'
+const FOTO_PROJ_SOCIAL = 'img/sample_16x9.png'
+
+let TEXTO_HTML_PROJ_ROBO_UV = `
+Projeto idealizado durante a pandemia do covid-19 com o objetivo de [...]
+`
+let TEXTO_HTML_PROJ_SOCIAL =`
+Projeto desde &lt;ano&gt; com o fim de trazer [...]
+`
+
 // A partir daqui volta a ser código, pode ignorar
 function replaceSlides() {
     if (slides.length == 0) {
@@ -131,6 +142,16 @@ let substitui = function () {
     retval = retval.pipe(replace('@@TEXTO_HTML_SOMBRA', TEXTO_HTML_SOMBRA))
     retval = retval.pipe(replace('@@TEXTO_HTML_SONIC', TEXTO_HTML_SONIC))
     retval = retval.pipe(replace('@@TEXTO_HTML_TONTO', TEXTO_HTML_TONTO))
+
+    // Substituir seção projetos
+    TEXTO_HTML_PROJ_ROBO_UV = addTabs(TEXTO_HTML_PROJ_ROBO_UV, 7)
+    TEXTO_HTML_PROJ_SOCIAL = addTabs(TEXTO_HTML_PROJ_SOCIAL, 7)
+
+    retval = retval.pipe(replace('@@FOTO_ROBO_UV', FOTO_ROBO_UV))
+    retval = retval.pipe(replace('@@FOTO_PROJ_SOCIAL', FOTO_PROJ_SOCIAL))
+
+    retval = retval.pipe(replace('@@TEXTO_HTML_PROJ_ROBO_UV', TEXTO_HTML_PROJ_ROBO_UV))
+    retval = retval.pipe(replace('@@TEXTO_HTML_PROJ_SOCIAL', TEXTO_HTML_PROJ_SOCIAL))
 
     // Output
     retval = retval.pipe(gulp.dest('./'))
