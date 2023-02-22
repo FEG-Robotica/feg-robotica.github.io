@@ -3,7 +3,6 @@ import imagemin from 'gulp-imagemin'
 import replace from 'gulp-replace'
 import {addTabs, makeSlideObj} from './gulp-helpers.js'
 
-
 // Seção 1 - Slides
 let slides = []
 slides.push(makeSlideObj('img/sample_16x9.png', 'Foto da equipe trabalhando'))
@@ -22,10 +21,36 @@ let SOBRE_TEXTO_HTML = `
     categorias sumô e seguidor de linha. <br>
     Além disso, temos outros projetos como o <a href="#projetos">Robô UV</a>
     e o nosso <a href="#projetos">Projeto Social</a>.
-</p>`
+</p>` // TODO: Por o link da FEG
 
 // Seção 3 - Robôs
+const FOTO_HACHIKO = 'img/sample_16x9.png'
+const FOTO_LOBA = 'img/sample_16x9.png'
+const FOTO_SONIC = 'img/sample_16x9.png'
+const FOTO_SOMBRA = 'img/sample_16x9.png'
+const FOTO_TONTO = 'img/sample_16x9.png'
 
+let TEXTO_HTML_HACHIKO = `
+Robô sumô - 3kg
+`
+
+let TEXTO_HTML_LOBA = `
+Robô sumô - 3kg
+`
+
+let TEXTO_HTML_SONIC = `
+Robô sumô - 500g
+`
+
+let TEXTO_HTML_SOMBRA = `
+Robô sumô - 500g
+`
+
+let TEXTO_HTML_TONTO = `
+Robô seguidor de linha
+`
+
+// A partir daqui volta a ser código, pode ignorar
 function replaceSlides() {
     if (slides.length == 0) {
         console.log('nenhum slide detectado, seção de slides excluída dessa build')
@@ -87,6 +112,25 @@ let substitui = function () {
     retval = retval.pipe(replace('@@SOBRE_IMG_URL', SOBRE_IMG_URL))
     retval = retval.pipe(replace('@@SOBRE_IMG_DESCR', SOBRE_IMG_DESCR))
     retval = retval.pipe(replace('@@SOBRE_TEXTO_HTML', SOBRE_TEXTO_HTML))
+    
+    // Substituir seção robôs
+    TEXTO_HTML_HACHIKO = addTabs(TEXTO_HTML_HACHIKO, 7)
+    TEXTO_HTML_LOBA = addTabs(TEXTO_HTML_LOBA, 7)
+    TEXTO_HTML_SOMBRA = addTabs(TEXTO_HTML_SOMBRA, 7)
+    TEXTO_HTML_SONIC = addTabs(TEXTO_HTML_SONIC, 7)
+    TEXTO_HTML_TONTO = addTabs(TEXTO_HTML_TONTO, 7)
+
+    retval = retval.pipe(replace('@@FOTO_HACHIKO', FOTO_HACHIKO))
+    retval = retval.pipe(replace('@@FOTO_LOBA', FOTO_LOBA))
+    retval = retval.pipe(replace('@@FOTO_SOMBRA', FOTO_SOMBRA))
+    retval = retval.pipe(replace('@@FOTO_SONIC', FOTO_SONIC))
+    retval = retval.pipe(replace('@@FOTO_TONTO', FOTO_TONTO))
+
+    retval = retval.pipe(replace('@@TEXTO_HTML_HACHIKO', TEXTO_HTML_HACHIKO))
+    retval = retval.pipe(replace('@@TEXTO_HTML_LOBA', TEXTO_HTML_LOBA))
+    retval = retval.pipe(replace('@@TEXTO_HTML_SOMBRA', TEXTO_HTML_SOMBRA))
+    retval = retval.pipe(replace('@@TEXTO_HTML_SONIC', TEXTO_HTML_SONIC))
+    retval = retval.pipe(replace('@@TEXTO_HTML_TONTO', TEXTO_HTML_TONTO))
 
     // Output
     retval = retval.pipe(gulp.dest('./'))

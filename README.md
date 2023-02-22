@@ -14,11 +14,11 @@ Aqui você encontra informações de como editar o site
 ## Lista de tarefas
 - [x] Adaptar seção de slideshow com o gulp-replace
 - [x] Adaptar seção de sobre com o gulp-replace
-- [ ] Adaptar seção de robôs com o gulp-replace
+- [x] Adaptar seção de robôs com o gulp-replace
 - [ ] Adaptar seção de projetos com o gulp-replace
 - [ ] Adaptar seção de patrocínios com o gulp-replace
 - [ ] Adaptar seção de membros com o gulp-replace
-- [ ] pegar o favicon
+- [ ] Pegar o favicon
 - [x] Adicionar o gulp-imagemin
 - [ ] Adicionar captions aos slides
 
