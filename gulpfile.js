@@ -1,7 +1,7 @@
 import gulp from 'gulp'
 import imagemin from 'gulp-imagemin'
 import replace from 'gulp-replace'
-import {addTabs, makeSlideObj} from './gulp-helpers.js'
+import { addTabs, makeSlideObj, makeSponsorObj } from './gulp-helpers.js'
 
 // Seção 1 - Slides
 let slides = []
@@ -57,9 +57,36 @@ const FOTO_PROJ_SOCIAL = 'img/sample_16x9.png'
 let TEXTO_HTML_PROJ_ROBO_UV = `
 Projeto idealizado durante a pandemia do covid-19 com o objetivo de [...]
 `
-let TEXTO_HTML_PROJ_SOCIAL =`
+let TEXTO_HTML_PROJ_SOCIAL = `
 Projeto desde &lt;ano&gt; com o fim de trazer [...]
 `
+
+// Seção 5 - parcerias/patrocinios
+let patrocinios = []
+patrocinios.push(makeSponsorObj(
+    'Empresa A',
+    'img/sample_16x9.png',
+    'Logotipo da empresa A',
+    'Desde 2011 a <a href="#">Empresa A</a> nos apoia [...]'
+))
+patrocinios.push(makeSponsorObj(
+    'Empresa B',
+    'img/sample_16x9.png',
+    'Logotipo da empresa B',
+    'Desde 2011 a <a href="#">Empresa B</a> nos apoia [...]'
+))
+patrocinios.push(makeSponsorObj(
+    'Empresa C',
+    'img/sample_16x9.png',
+    'Logotipo da empresa C',
+    'Desde 2011 a <a href="#">Empresa C</a> nos apoia [...]'
+))
+patrocinios.push(makeSponsorObj(
+    'Empresa D',
+    'img/sample_16x9.png',
+    'Logotipo da empresa D',
+    'Desde 2011 a <a href="#">Empresa D</a> nos apoia [...]'
+))
 
 // A partir daqui volta a ser código, pode ignorar
 function replaceSlides() {
@@ -106,6 +133,52 @@ function replaceSlides() {
     return retval
 }
 
+function geraHtmlPatrocinios() {
+    //      <div class="row mt-4 text-center"> // 4
+    //                 <div class="col-md-4"> // 5
+    //                     <img src="img/sample_16x9.png" alt="" class="d-block w-75 mx-auto rounded mb-2"> // 6
+    //                     <h3 class="section-title text-colored fs-4">
+    //                         Parceira 3 // 7
+    //                     </h3>
+    //                     <p>
+    //                         Desde 2013 a <a href="#">Empresa 3</a> nos apoia blabla
+    //                     </p>
+    //                 </div>
+    //             </div>
+    //         </div>
+
+    let retval = ''
+    patrocinios.forEach(function (item, indice) {
+        const name = item.name
+        const logo = item.logoURL
+        const imgAltText = item.logoDescription
+        const text = item.htmlContent
+
+        // Começo da row de 3 itens
+        if (indice % 3 == 0) {
+            retval += addTabs('<div class="row mt-4 text-center">\n', (indice == 0 ? 0 : 4))
+        }
+
+        // Construção do item
+        retval += addTabs('<div class="col-md-4">\n', 5)
+        retval += addTabs(`<img src="${logo}" alt="${imgAltText}" class="d-block w-75 mx-auto rounded mb-2">\n`, 6)
+        retval += addTabs(`<h3 class="section-title text-colored fs-4">\n`, 6)
+        retval += addTabs(`${name}\n`, 7)
+        retval += addTabs(`</h3>\n`, 6)
+        retval += addTabs(`<p>\n`, 6)
+        retval += addTabs(`${text}\n`, 7)
+        retval += addTabs(`</p>\n`, 6)
+        retval += addTabs(`</div>\n`, 5)
+
+        // Fim da row
+        if (indice % 3 == 2 || indice == (patrocinios.length - 1)) {
+            retval += addTabs('</div>\n', 4)
+        }
+    })
+
+    return retval;
+}
+
 let comprimeImagens = function () {
     return gulp.src('./src/img/**/*')
         .pipe(imagemin())
@@ -123,7 +196,7 @@ let substitui = function () {
     retval = retval.pipe(replace('@@SOBRE_IMG_URL', SOBRE_IMG_URL))
     retval = retval.pipe(replace('@@SOBRE_IMG_DESCR', SOBRE_IMG_DESCR))
     retval = retval.pipe(replace('@@SOBRE_TEXTO_HTML', SOBRE_TEXTO_HTML))
-    
+
     // Substituir seção robôs
     TEXTO_HTML_HACHIKO = addTabs(TEXTO_HTML_HACHIKO, 7)
     TEXTO_HTML_LOBA = addTabs(TEXTO_HTML_LOBA, 7)
@@ -152,6 +225,9 @@ let substitui = function () {
 
     retval = retval.pipe(replace('@@TEXTO_HTML_PROJ_ROBO_UV', TEXTO_HTML_PROJ_ROBO_UV))
     retval = retval.pipe(replace('@@TEXTO_HTML_PROJ_SOCIAL', TEXTO_HTML_PROJ_SOCIAL))
+
+    // Substituir seção patrocinios
+    retval = retval.pipe(replace('@@PATROCINIOS', geraHtmlPatrocinios()))
 
     // Output
     retval = retval.pipe(gulp.dest('./'))

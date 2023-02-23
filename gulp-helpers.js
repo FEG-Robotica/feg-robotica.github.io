@@ -6,16 +6,31 @@ function addTabs(sourceText, numOfTabs) {
             for (let i = 0; i < numOfTabs; i++) {
                 TAB_PREFIX += A_TAB
             }
-            return TAB_PREFIX + item
+            if (item.trim() != '') {
+                return TAB_PREFIX + item
+            } else {
+                return item
+            }
+
         })
         .join('\n')
 }
 
-let makeSlideObj = (file, shortDescription) => {
+
+let makeSlideObj = (img, shortDescription) => {
     return {
-        file: file,
+        file: img,
         shortDescription: shortDescription,
     }
 }
 
-export { addTabs, makeSlideObj }
+let makeSponsorObj = (name, logoURL, logoDescription, htmlContent) => {
+    return {
+        name: name,
+        logoURL: logoURL,
+        htmlContent: htmlContent,
+        logoDescription: logoDescription
+    }
+}
+
+export { addTabs, makeSlideObj, makeSponsorObj }
