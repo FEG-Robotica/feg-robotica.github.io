@@ -12,16 +12,8 @@ Aqui você encontra informações de como editar o site
 3. Faça a commit
 
 ## Lista de tarefas
-- [x] Adaptar seção de slideshow com o gulp-replace
-- [x] Adaptar seção de sobre com o gulp-replace
-- [x] Adaptar seção de robôs com o gulp-replace
-- [ ] Adaptar seção de projetos com o gulp-replace
-- [ ] Adaptar seção de patrocínios com o gulp-replace
-- [ ] Adaptar seção de membros com o gulp-replace
-- [ ] Pegar o favicon
-- [x] Adicionar o gulp-imagemin
-- [ ] Adicionar captions aos slides
+- [ ] favicon
 
 ## Dúvidas
-Quaisquer dúvidas contate-me em (12) 98219-6666 no Whatsapp ou
-flaviomonteiro2013@gmail.com
+Quaisquer dúvidas contate-me em (12) 98219-6666 no Whatsapp ou em
+[flaviomonteiro2013@gmail.com](mailto:flaviomonteiro2013@gmail.com)

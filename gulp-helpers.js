@@ -33,4 +33,18 @@ let makeSponsorObj = (name, logoURL, logoDescription, htmlContent) => {
     }
 }
 
-export { addTabs, makeSlideObj, makeSponsorObj }
+let makeMemberObj = (nome, foto, curso, desdeAno, email, facebook, instagram, github, equipes) => {
+    return {
+        nome: nome,
+        foto: foto,
+        curso: curso,
+        desdeAno: desdeAno,
+        email: email,
+        facebook: facebook,
+        instagram: instagram,
+        github: github,
+        equipes: equipes // Para membros anteriores
+    }
+}
+
+export { addTabs, makeSlideObj, makeSponsorObj, makeMemberObj }
