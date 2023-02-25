@@ -26,8 +26,8 @@ let SOBRE_TEXTO_HTML = `
 
     Desde 2011, participamos de diversas competições nas
     categorias sumô e seguidor de linha. <br>
-    Além disso, temos outros projetos como o <a href="#projetos">Robô UV</a>
-    e o nosso <a href="#projetos">Projeto Social</a>.
+    Além disso, temos outros projetos como o <a href="#nossos-projetos">Robô UV</a>
+    e o nosso <a href="#nossos-projetos">Projeto Social</a>.
 </p>` // TODO: Por o link da FEG
 
 // Seção 3 - Robôs
