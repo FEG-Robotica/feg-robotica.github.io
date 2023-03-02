@@ -154,7 +154,7 @@ function replaceSlides() {
         retval +=
             `
                     <div class="carousel-item@@IS_ACTIVE">
-                        <img src="@@IMAGE_SRC" class="d-block w-50 mx-auto" alt="@@IMAGE_DESCR">
+                        <img src="@@IMAGE_SRC" class="d-block mx-auto" alt="@@IMAGE_DESCR">
                     </div>`
                 .replace('@@IS_ACTIVE', (indice == 0 ? ' active' : ''))
                 .replace('@@IMAGE_SRC', slideObj.file)

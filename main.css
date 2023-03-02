@@ -59,12 +59,18 @@ section:nth-child(even) {
     text-decoration: none;
 }
 
+.carousel-item img {
+    width: 50%;
+}
+
 @media screen and (max-width: 767px) {
     .carousel-item img {
-        height: 280px;
+        width: 100%;
     }
 }
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.7);
 }
+
