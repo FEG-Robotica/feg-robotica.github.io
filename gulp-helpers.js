@@ -33,12 +33,13 @@ let makeSponsorObj = (name, logoURL, logoDescription, htmlContent) => {
     }
 }
 
-let makeMemberObj = (nome, foto, curso, desdeAno, email, facebook, instagram, github, equipes) => {
+let makeMemberObj = (nome, foto, curso, desdeAno, linkedin, email, facebook, instagram, github, equipes) => {
     return {
         nome: nome,
         foto: foto,
         curso: curso,
         desdeAno: desdeAno,
+        linkedin: linkedin,
         email: email,
         facebook: facebook,
         instagram: instagram,

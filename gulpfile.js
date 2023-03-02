@@ -25,7 +25,7 @@ let SOBRE_TEXTO_HTML = `
     <a href="#">FEG</a>, um dos campi da Unesp. <br><br>
 
     Desde 2011, participamos de diversas competições nas
-    categorias sumô e seguidor de linha. <br>
+    categorias sumô e seguidor de linha.<br>
     Além disso, temos outros projetos como o <a href="#nossos-projetos">Robô UV</a>
     e o nosso <a href="#nossos-projetos">Projeto Social</a>.
 </p>` // TODO: Por o link da FEG
@@ -103,41 +103,42 @@ let membrosMecanica = []
 let membrosMarketing = []
 let membrosAnteriores = []
 
-let templateMembro = makeMemberObj(
-    'Nome da pessoa',
-    'img/sample_3x4.png',
-    'Engenharia de produção',
-    'Na equipe desde 2011',
-    'mail@gmail.com',
-    'https://linkdofb.com',
-    `https://linkdoinsta.com`,
-    `https://linkdogithub.com`,
+let rabico_willian = makeMemberObj(
+    'Rabicó',
+    'img/fotos-membros/willian-ibanez.jpg',
+    'Engenharia elétrica',
+    'Na equipe desde 2020<br>',
+    'https://www.linkedin.com/in/willian-ibanez-mesquita-0a43591a9/',
+    'mailto:w.mesquita@unesp.br',
+    null, // facebook
+    `https://www.instagram.com/will.ibanez/`,
+    null, // github
     null // preencher apenas para membros anteriores
     // e.g.
     // 'Participou da Programação e da Mecânica'
 )
-membrosCapitania.push(templateMembro)
-membrosCapitania.push(templateMembro)
-membrosCapitania.push(templateMembro)
-membrosCapitania.push(templateMembro)
 
-membrosEletronica.push(templateMembro)
-membrosProgramacao.push(templateMembro)
-membrosMecanica.push(templateMembro)
-membrosMarketing.push(templateMembro)
+membrosCapitania.push(rabico_willian)
 
-membrosAnteriores.push(makeMemberObj(
-    'Nome da pessoa',
-    'img/sample_3x4.png',
-    'Engenharia de produção',
-    'Na equipe de 2011 a 2013',
-    'mail@gmail.com',
-    'https://linkdofb.com',
-    `https://linkdoinsta.com`,
-    `https://linkdogithub.com`,
-    `Na Mecânica em 2011<br>\n
-    Na Programação de 2012 a 2013`
-))
+
+// membrosCapitania.push(templateMembro)
+// membrosEletronica.push(templateMembro)
+// membrosProgramacao.push(templateMembro)
+// membrosMecanica.push(templateMembro)
+// membrosMarketing.push(templateMembro)
+
+// membrosAnteriores.push(makeMemberObj(
+//     'Nome da pessoa',
+//     'img/sample_3x4.png',
+//     'Engenharia de produção',
+//     'Na equipe de 2011 a 2013',
+//     'mail@gmail.com',
+//     'https://linkdofb.com',
+//     `https://linkdoinsta.com`,
+//     `https://linkdogithub.com`,
+//     `Na Mecânica em 2011<br>\n
+//     Na Programação de 2012 a 2013`
+// ))
 
 // A partir daqui volta a ser código, pode ignorar
 function replaceSlides() {
@@ -221,7 +222,7 @@ function geraHtmlPatrocinios() {
 function geraHtmlMembros(listaDeMembros) {
     let retvalHtml = ''
 
-    if(listaDeMembros.length == 0) {
+    if (listaDeMembros.length == 0) {
         retvalHtml += addTabs('<div class="col-md-12">\n', 9)
         retvalHtml += addTabs('<b>Não foram registrados membros nessa seção ainda!</b>\n', 10)
         retvalHtml += addTabs('</div>\n', 9)
@@ -235,12 +236,13 @@ function geraHtmlMembros(listaDeMembros) {
         retvalHtml += addTabs(`<p>\n`, 10)
         retvalHtml += addTabs(`${membro.curso}<br>\n`, 11)
         retvalHtml += addTabs(`${membro.desdeAno}\n`, 11)
-        if(membro.equipes != null) {
+        if (membro.equipes != null) {
             retvalHtml += addTabs(`<br>${membro.equipes}\n`, 11)
         }
         retvalHtml += addTabs(`</p>\n`, 10)
 
         let links = []
+        if (membro.linkedin != null) { links.push([membro.email, "linkedin"]) }
         if (membro.email != null) { links.push([membro.email, "email"]) }
         if (membro.facebook != null) { links.push([membro.facebook, "fb"]) }
         if (membro.instagram != null) { links.push([membro.instagram, "ig"]) }
@@ -257,9 +259,10 @@ function geraHtmlMembros(listaDeMembros) {
             else if (type == 'fb') { return '<i class="bi bi-facebook text-colored"></i>\n' }
             else if (type == 'ig') { return '<i class="bi bi-instagram text-colored"></i>\n' }
             else if (type == 'github') { return '<i class="bi bi-github text-colored"></i>\n' }
+            else if (type == 'linkedin') { return '<i class="bi bi-linkedin text-colored"></i>\n' }
         }
         for (let i = 0; i < links.length; i++) {
-            let optionalMarginEnd = (i != (links.length-1)) ? ' me-2' : ''
+            let optionalMarginEnd = (i != (links.length - 1)) ? ' me-2' : ''
             let linkObj = links[i]
             let link = linkObj[0]
             let linkType = linkObj[1]
