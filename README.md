@@ -13,6 +13,7 @@ Aqui você encontra informações de como editar o site
 
 ## Lista de tarefas
 - [ ] favicon
+- [ ] fazer o null em imagem do makeMemberObj retornar uma foto de template
 
 ## Dúvidas
 Quaisquer dúvidas contate-me em (12) 98219-6666 no Whatsapp ou em
