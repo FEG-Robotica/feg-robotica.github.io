@@ -103,6 +103,7 @@ let membrosMecanica = []
 let membrosMarketing = []
 let membrosAnteriores = []
 
+// Membros capitania
 let rabico_willian = makeMemberObj(
     'Rabicó',
     'img/fotos-membros/willian-ibanez.jpg',
@@ -118,8 +119,42 @@ let rabico_willian = makeMemberObj(
     // 'Participou da Programação e da Mecânica'
 )
 
-membrosCapitania.push(rabico_willian)
+// Membros programacao
+let ze_gabriel = makeMemberObj(
+    'Zé Gabriel',
+    'img/sample_3x4.png',
+    'Engenharia elétrica',
+    'Na equipe desde 2022<br>',
+    null, // linkedin
+    'mailto:jose.g.souza@unesp.br',
+    null, // facebook
+    null, // instagram,
+    null, // github
+    null // preencher apenas para membros anteriores
+    // e.g.
+    // 'Participou da Programação e da Mecânica'
+)
 
+// Membros anteriores
+let lari_manucci = makeMemberObj(
+    'Lari Manucci',
+    'img/fotos-membros/larissa-manucci.jpeg',
+    'Engenharia mecânica',
+    'Na equipe de 2016 a 2019<br>',
+    'https://www.linkedin.com/in/larissa-manucci-279951171', // linkedin
+    'mailto:manuccilarissa@gmail.com',
+    null, // facebook
+    'https://www.instagram.com/larissamanucci/', // instagram,
+    null, // github
+    `Na mecânica em 2016 - 2017<br>\n
+    Na capitania em 2018<br>\n
+    Na mecânica em 2019\n`
+)
+
+// Fazer as listas
+membrosCapitania.push(rabico_willian)
+membrosProgramacao.push(ze_gabriel)
+membrosAnteriores.push(lari_manucci)
 
 // membrosCapitania.push(templateMembro)
 // membrosEletronica.push(templateMembro)
