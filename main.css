@@ -69,6 +69,14 @@ section:nth-child(even) {
     }
 }
 
+@media screen and (max-width: 365px) {
+    .logo-adaptativa {
+        width: 52px; 
+        overflow-x: hidden;
+    }
+}
+
+
 .carousel-control-prev-icon,
 .carousel-control-next-icon {
     background-color: rgba(0, 0, 0, 0.7);
