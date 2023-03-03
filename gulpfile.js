@@ -114,9 +114,22 @@ let rabico_willian = makeMemberObj(
     null, // facebook
     `https://www.instagram.com/will.ibanez/`,
     null, // github
-    null // preencher apenas para membros anteriores
-    // e.g.
-    // 'Participou da Programação e da Mecânica'
+    `Na eletrônica de 2020 a 2022.1<br>\n
+    Desde 2022.2 na capitania`
+)
+
+let francisco_bueno_amapa = makeMemberObj(
+    'Francisco Bueno (Amapá)',
+    'img/sample_3x4.png',
+    'Engenharia elétrica',
+    'Na equipe desde 2020<br>',
+    'https://www.linkedin.com/in/francisco-bueno-neto-3578941b4/',
+    'mailto:francisco.bueno@unesp.br',
+    null, // facebook
+    'https://www.instagram.com/franbuenoneto/',
+    'https://github.com/FranBuNeto', // github
+    `Na mecânica de 2020 a 2022<br>\n
+    Desde 2023 trainee na capitania`
 )
 
 // Membros programacao
@@ -130,10 +143,9 @@ let ze_gabriel = makeMemberObj(
     null, // facebook
     null, // instagram,
     null, // github
-    null // preencher apenas para membros anteriores
-    // e.g.
-    // 'Participou da Programação e da Mecânica'
+    'Desde 2022 na programação' // historico
 )
+
 
 // Membros anteriores
 let lari_manucci = makeMemberObj(
@@ -146,13 +158,16 @@ let lari_manucci = makeMemberObj(
     null, // facebook
     'https://www.instagram.com/larissamanucci/', // instagram,
     null, // github
-    `Na mecânica em 2016 - 2017<br>\n
+    `Na mecânica de 2016 a 2017<br>\n
     Na capitania em 2018<br>\n
     Na mecânica em 2019\n`
 )
 
+
+
 // Fazer as listas
 membrosCapitania.push(rabico_willian)
+membrosCapitania.push(francisco_bueno_amapa)
 membrosProgramacao.push(ze_gabriel)
 membrosAnteriores.push(lari_manucci)
 
