@@ -179,12 +179,27 @@ let silas_vergilio = makeMemberObj(
     Na programação\n`
 )
 
+let raphael_alencar = makeMemberObj(
+    'Raphael Alencar',
+    'img/fotos-membros/raphael-alencar.jpg',
+    'Engenharia mecânica',
+    'Na equipe de 2019 a 2022<br>',
+    'https://www.linkedin.com/in/raphael-alencar-5a4a6a238/', // linkedin
+    'mailto:raphael.alencar@unesp.br',
+    'https://www.facebook.com/raphael.alencar.3/', // facebook
+    null, // instagram,
+    null, // github
+    `Na programação de 2019 a 2021<br>\n
+    Na capitania de 2021 a 2022\n`
+)
+
 
 // Fazer as listas
 membrosCapitania.push(rabico_willian)
 membrosCapitania.push(francisco_bueno_amapa)
 membrosProgramacao.push(ze_gabriel)
 
+membrosAnteriores.push(raphael_alencar)
 membrosAnteriores.push(lari_manucci)
 membrosAnteriores.push(silas_vergilio)
 
