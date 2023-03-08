@@ -163,13 +163,30 @@ let lari_manucci = makeMemberObj(
     Na mecânica em 2019\n`
 )
 
+let silas_vergilio = makeMemberObj(
+    'Silas Vergilio',
+    'img/sample_3x4.png',
+    'Engenharia elétrica',
+    'Na equipe de 2011 (criação) até um certo tempo<br>',
+    'https://www.linkedin.com/in/silas-vergilio/', // linkedin
+    'mailto:silas.vergilio@gmail.com',
+    null, // facebook
+    'https://www.instagram.com/silasvergilio/', // instagram,
+    'https://github.com/silasvergilio', // github
+    `Na capitania em 2011<br>\n
+    Na comunicação<br>\n
+    Na eletrônica<br>\n
+    Na programação\n`
+)
 
 
 // Fazer as listas
 membrosCapitania.push(rabico_willian)
 membrosCapitania.push(francisco_bueno_amapa)
 membrosProgramacao.push(ze_gabriel)
+
 membrosAnteriores.push(lari_manucci)
+membrosAnteriores.push(silas_vergilio)
 
 // membrosCapitania.push(templateMembro)
 // membrosEletronica.push(templateMembro)
