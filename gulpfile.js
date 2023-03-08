@@ -146,6 +146,20 @@ let ze_gabriel = makeMemberObj(
     'Desde 2022 na programação' // historico
 )
 
+// Membros marketing
+let ana_gaioli = makeMemberObj(
+    'Ana Gaioli',
+    'img/fotos-membros/ana-gaioli.jpg',
+    'Engenharia elétrica',
+    'Na equipe desde 2022<br>',
+    'https://www.linkedin.com/in/ana-lu%C3%ADsa-gaioli-8b409a206/', // linkedin
+    'mailto:ana.gaioli@unesp.br',
+    'https://www.facebook.com/analuisa.gaioli/', // facebook
+    'https://www.instagram.com/ana.gaioli/', // instagram,
+    null, // github
+    'Desde 2022 no marketing' // historico
+)
+
 
 // Membros anteriores
 let lari_manucci = makeMemberObj(
@@ -198,6 +212,8 @@ let raphael_alencar = makeMemberObj(
 membrosCapitania.push(rabico_willian)
 membrosCapitania.push(francisco_bueno_amapa)
 membrosProgramacao.push(ze_gabriel)
+
+membrosMarketing.push(ana_gaioli)
 
 membrosAnteriores.push(raphael_alencar)
 membrosAnteriores.push(lari_manucci)
