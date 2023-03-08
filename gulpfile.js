@@ -5,10 +5,10 @@ import { addTabs, makeMemberObj, makeSlideObj, makeSponsorObj } from './gulp-hel
 
 // Seção 0 - Contato
 const EMAIL_FEG_ROBOTICA = 'insiraemailaqui@gmail.com'
-const LINK_FACEBOOK = 'https://facebook.com/insirafegrobotica'
-const LINK_INSTAGRAM = 'https://instagram.com/@insirafegrobotica'
-const LINK_GITHUB = 'https://github.com/insirafegrobotica'
-const ENDERECO = 'Av. Dr. Ariberto Pereira da Cunha, 333, bloco 4, sala XXX'
+const LINK_FACEBOOK = 'https://www.facebook.com/roboticafeg/'
+const LINK_INSTAGRAM = 'https://www.instagram.com/feg.robotica/'
+const LINK_GITHUB = 'https://github.com/FEG-Robotica'
+const ENDERECO = 'Av. Dr. Ariberto Pereira da Cunha, 333, bloco 4' // TODO adicionar sala e andar
 
 // Seção 1 - Slides
 let slides = []
